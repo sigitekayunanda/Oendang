@@ -1,0 +1,18 @@
+{
+  "themes": [
+    {
+      "slug": "yogi-gea",
+      "name": "Ngunduh Mantu Yogi & Gea",
+      "cat": "adat",
+      "couple": "Yogi & Gea",
+      "img": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
+      "url": "undangan-ngunduh-mantu-yogi-gea (2).html"
+    }
+  ],
+  "cetakModels": [
+    "Blangko Standar",
+    "Softcover Elegan",
+    "Hardcover Premium",
+    "Semi-Hardcover Eksklusif"
+  ]
+}
