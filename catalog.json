@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "title": "Undangan Pernikahan Rustic Gold",
+    "type": "Digital & Cetak",
+    "image": "assets/images/rustic-gold.jpg",
+    "price": "Rp 150.000",
+    "whatsappUrl": "https://wa.me/628123456789?text=Halo%2C%2C%20saya%20tertarik%20pesan%20undangan%20Rustic%20Gold"
+  },
+  {
+    "id": "2",
+    "title": "Undangan Minimalist Floral",
+    "type": "Digital",
+    "image": "assets/images/minimalist-floral.jpg",
+    "price": "Rp 100.000",
+    "whatsappUrl": "https://wa.me/628123456789?text=Halo%2C%2C%20saya%20tertarik%20pesan%20undangan%20Minimalist%20Floral"
+  }
+]

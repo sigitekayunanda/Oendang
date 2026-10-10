@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oendang — Undangan Cetak & Digital | by Lapak Kreatif, Kandis</title>
+<meta name="description" content="Oendang by Lapak Kreatif: undangan digital Rp75.000 semua tema dan undangan cetak berbagai model. Kandis, Siak, Riau. Pesan mudah via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDF9F0; --bg2:#F5EDDA; --ink:#29241B; --muted:#6E6455;
+  --primary:#14684A; --primary-d:#0C4A34; --gold:#C19A2E; --gold-soft:#EAD9A4;
+  --card:#FFFFFF; --line:#E7DCC3; --radius:18px;
+  --shadow:0 10px 30px rgba(41,36,27,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px}
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif}
+img{max-width:100%;display:block}
+a{color:var(--primary)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font:inherit;font-weight:700;border-radius:999px;padding:13px 26px;text-decoration:none;transition:.2s;font-size:15px}
+.btn-wa{background:#22a35a;color:#fff}.btn-wa:hover{background:#1b8a4b}
+.btn-gold{background:var(--gold);color:#241c05}.btn-gold:hover{background:#a98725;color:#fff}
+.btn-ghost{background:transparent;border:2px solid var(--primary);color:var(--primary)}.btn-ghost:hover{background:var(--primary);color:#fff}
+.btn-light{background:#fff;color:var(--primary-d)}
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(253,249,240,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Playfair Display',serif;font-size:27px;font-weight:800;color:var(--primary-d);text-decoration:none;letter-spacing:.5px}
+.logo small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:2.2px;color:var(--gold);text-transform:uppercase;margin-top:-4px}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{padding:10px 20px}
+.burger{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:var(--primary-d)}
+/* hero */
+.hero{background:linear-gradient(160deg,#0C4A34 0%,#14684A 55%,#1B7A55 100%);color:#fff;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:42px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero-in{padding:74px 0 96px;text-align:center;position:relative;z-index:2}
+.hero .kicker{display:inline-block;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:6px 16px;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.12;font-weight:800}
+.hero h1 em{color:var(--gold-soft);font-style:italic}
+.hero p{max-width:640px;margin:20px auto 30px;color:#EAF3EC;font-size:17px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:46px}
+.stat{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:14px 22px;min-width:132px}
+.stat b{display:block;font-size:28px;font-family:'Playfair Display',serif}
+.stat span{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:#D9E9DD}
+/* sections */
+section{padding:70px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 40px}
+.sec-head .tag{color:var(--gold);font-weight:800;letter-spacing:2.4px;font-size:12.5px;text-transform:uppercase}
+.sec-head h2{font-size:clamp(27px,4vw,38px);margin:8px 0 10px;color:var(--primary-d)}
+.sec-head p{color:var(--muted)}
+/* tabs */
+.tabs{display:flex;gap:10px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}
+.tab-btn{border:2px solid var(--line);background:#fff;border-radius:999px;padding:11px 26px;font:inherit;font-weight:700;cursor:pointer;color:var(--muted)}
+.tab-btn.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.panel{display:none}.panel.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.price-card{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:36px;display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start}
+.price-big{text-align:center;background:var(--bg2);border-radius:18px;padding:28px 18px;border:1px dashed var(--gold)}
+.price-big .lbl{font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.price-big .num{font-family:'Playfair Display',serif;font-size:44px;font-weight:800;color:var(--primary-d);margin:6px 0}
+.price-big .per{color:var(--muted);font-size:14px}
+.feat{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.feat li{padding-left:28px;position:relative;font-size:15px}
+.feat li:before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:6px;background:var(--primary);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:800}
+.models{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:14px}
+.model{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;font-weight:600;font-size:15px;display:flex;gap:10px;align-items:center}
+.model i{width:10px;height:10px;border-radius:3px;background:var(--gold);flex:none;transform:rotate(45deg)}
+.note-box{margin-top:22px;background:#FFF7E0;border:1px solid var(--gold-soft);border-radius:14px;padding:16px 20px;font-size:15px}
+/* catalog */
+.cat-tools{display:flex;flex-direction:column;gap:16px;align-items:center;margin-bottom:28px}
+.search-box{width:min(480px,100%)}
+.search-box input{width:100%;padding:13px 18px;border:2px solid var(--line);border-radius:999px;font:inherit;background:#fff}
+.search-box input:focus{outline:none;border-color:var(--primary)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 18px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;color:var(--muted)}
+.chip.active{background:var(--gold);border-color:var(--gold);color:#241c05}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 16px rgba(41,36,27,.06);display:flex;flex-direction:column;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .cover{cursor:zoom-in;aspect-ratio:4/3;object-fit:cover;width:100%}
+.card:nth-child(odd){border-radius:26px 10px 26px 10px}
+.card:nth-child(3n){border-radius:10px 26px 10px 26px}
+.card-body{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card-body h3{font-size:19px;color:var(--primary-d)}
+.card-body .couple{color:var(--muted);font-size:14px}
+.card-body .cat{font-size:11.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold)}
+.card-actions{margin-top:auto;display:flex;gap:8px;padding-top:12px}
+.card-actions a{flex:1;text-align:center;padding:10px 8px;border-radius:10px;font-size:13.5px;font-weight:700;text-decoration:none}
+.a-view{background:var(--bg2);color:var(--primary-d)}
+.a-order{background:#22a35a;color:#fff}
+.empty-msg{text-align:center;color:var(--muted);padding:30px;display:none}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.step .n{width:42px;height:42px;border-radius:12px;background:var(--primary);color:#fff;font-family:'Playfair Display',serif;font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.step h3{margin-bottom:6px;color:var(--primary-d)}
+.step p{color:var(--muted);font-size:14.5px}
+/* builder */
+.builder{background:linear-gradient(170deg,#0C4A34,#14684A);border-radius:26px;padding:38px;color:#fff}
+.builder h2{color:#fff;text-align:center;font-size:clamp(25px,4vw,34px)}
+.builder .sub{text-align:center;color:#D9E9DD;margin:8px auto 28px;max-width:560px}
+.b-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.b-form label{display:block;font-size:13.5px;font-weight:700;letter-spacing:.4px;margin:14px 0 6px;color:var(--gold-soft)}
+.b-form input,.b-form select,.b-form textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.3);font:inherit;background:rgba(255,255,255,.97);color:var(--ink)}
+.radio-row{display:flex;gap:10px}
+.radio-pill{flex:1}
+.radio-pill input{display:none}
+.radio-pill span{display:block;text-align:center;padding:12px;border-radius:10px;border:1.5px solid rgba(255,255,255,.4);cursor:pointer;font-weight:700}
+.radio-pill input:checked+span{background:var(--gold);color:#241c05;border-color:var(--gold)}
+.b-preview{background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.4);border-radius:14px;padding:20px;display:flex;flex-direction:column}
+.b-preview h3{font-size:16px;margin-bottom:10px;color:var(--gold-soft);font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:1px;text-transform:uppercase}
+#waPreview{white-space:pre-wrap;font-size:14.5px;color:#F2F6F2;flex:1}
+.b-preview .btn{justify-content:center;margin-top:16px}
+/* faq */
+.faq{max-width:780px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;font:inherit;font-weight:700;padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;gap:14px;color:var(--primary-d)}
+.faq-q .arr{transition:.25s;color:var(--gold);font-size:20px;line-height:1}
+.faq-item.open .faq-q .arr{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 20px 18px;color:var(--muted);font-size:15px}
+/* footer */
+footer{background:#123524;color:#CFE3D4;padding:52px 0 30px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h4{color:#fff;font-family:'Playfair Display',serif;margin-bottom:12px;font-size:19px}
+footer a{color:#CFE3D4;text-decoration:none}
+footer a:hover{color:#fff}
+.f-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:34px;padding-top:20px;font-size:13.5px;color:#9DBFA8;text-align:center}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(18,26,20,.88);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.lb.open{display:flex}
+.lb-box{background:#fff;border-radius:20px;max-width:520px;width:100%;overflow:hidden;animation:fade .25s ease}
+.lb-box img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.lb-body{padding:22px}
+.lb-body h3{color:var(--primary-d);font-size:22px}
+.lb-body p{color:var(--muted);font-size:14.5px;margin:4px 0 16px}
+.lb-actions{display:flex;gap:10px}
+.lb-actions a{flex:1;text-align:center;padding:12px;border-radius:10px;font-weight:700;text-decoration:none}
+.lb-close{position:absolute;top:18px;right:22px;background:#fff;border:none;width:42px;height:42px;border-radius:50%;font-size:20px;cursor:pointer}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:90;background:#22a35a;color:#fff;border-radius:999px;padding:13px 20px;font-weight:800;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.25);font-size:15px}
+.to-top{position:fixed;right:18px;bottom:78px;z-index:90;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--primary-d);cursor:pointer;display:none;font-size:18px;box-shadow:var(--shadow)}
+.reveal{opacity:0;transform:translateY(18px);transition:.6s ease}
+.reveal.on{opacity:1;transform:none}
+@media(max-width:820px){
+  .price-card{grid-template-columns:1fr}
+  .b-grid{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  .feat{grid-template-columns:1fr}
+  .nav-links{position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:18px;border-bottom:1px solid var(--line);display:none;gap:16px}
+  .nav-links.open{display:flex}
+  .burger{display:block}
+  .builder{padding:26px 20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#atas">Oendang<small>by Lapak Kreatif</small></a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#layanan">Layanan</a>
+      <a href="#katalog">Katalog</a>
+      <a href="#cara">Cara Pesan</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-wa nav-cta" href="#pesan">Pesan Sekarang</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="atas">
+  <div class="wrap hero-in">
+    <span class="kicker">Undangan Cetak &amp; Digital — Kandis, Riau</span>
+    <h1>Hari Baik Layak Dirayakan dengan <em>Undangan Terbaik</em></h1>
+    <p>Oendang adalah layanan undangan dari Lapak Kreatif: undangan digital interaktif Rp75.000 untuk semua tema, dan undangan cetak berbagai model. Pilih tema, klik, langsung terhubung ke WhatsApp kami.</p>
+    <div class="hero-btns">
+      <a class="btn btn-gold" href="#katalog">Lihat Katalog Tema</a>
+      <a class="btn btn-light" href="#pesan">Buat Pesanan</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b><span class="count" id="statThemes" data-to="10">0</span></b><span>Tema Katalog</span></div>
+      <div class="stat"><b><span class="count" data-to="11">0</span></b><span>Fitur Paket Digital</span></div>
+      <div class="stat"><b><span class="count" data-to="2">0</span></b><span>Layanan: Cetak &amp; Digital</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="layanan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="tag">Layanan Kami</div>
+      <h2>Dua Layanan, Satu Tempat</h2>
+      <p>Klik tab di bawah untuk berpindah antara undangan digital dan undangan cetak.</p>
+    </div>
+    <div class="tabs reveal">
+      <button class="tab-btn active" data-tab="digital">Undangan Digital</button>
+      <button class="tab-btn" data-tab="cetak">Undangan Cetak</button>
+    </div>
+
+    <div class="panel active" id="panel-digital">
+      <div class="price-card reveal">
+        <div class="price-big">
+          <div class="lbl">Paket Undangan Digital</div>
+          <div class="num">Rp75.000</div>
+          <div class="per">per acara — semua tema, fitur lengkap</div>
+          <a class="btn btn-wa" style="margin-top:18px" target="_blank" rel="noopener" href="https://wa.me/6282283506764?text=Halo%20Oendang%2C%20saya%20mau%20pesan%20undangan%20digital%20paket%20Rp75.000">Pesan via WhatsApp</a>
+        </div>
+        <div>
+          <h3 class="serif" style="color:var(--primary-d);margin-bottom:14px;font-size:22px">Semua ini sudah termasuk:</h3>
+          <ul class="feat">
+            <li>Nama tamu personal, satu per satu</li>
+            <li>RSVP &amp; buku ucapan online</li>
+            <li>Amplop digital</li>
+            <li>Galeri foto &amp; kisah cinta</li>
+            <li>Musik latar</li>
+            <li>Hitung mundur &amp; jadwal acara, termasuk tombol Simpan ke Kalender</li>
+            <li>Peta lokasi Google Maps</li>
+            <li>Ringan dibuka di HP</li>
+            <li>Bebas pilih semua tema katalog</li>
+            <li>Dibantu isi data &amp; foto sampai siap sebar</li>
+            <li>Link aktif sampai acara selesai</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-cetak">
+      <div class="reveal">
+        <div class="models" id="modelGrid"></div>
+        <div class="note-box">Harga undangan cetak <b>menyesuaikan model &amp; jumlah pesanan</b>. Pilih model di formulir pemesanan di bawah, atau tanya dulu lewat WhatsApp — kami bantu hitungkan.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="katalog" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="tag">Katalog Digital</div>
+      <h2 id="catalogTitle">Katalog Tema Undangan Digital</h2>
+      <p>Cari tema, saring kategori, klik sampul untuk melihat lebih besar, lalu buka contoh aslinya — setiap contoh bisa dicoba seperti tamu sungguhan.</p>
+    </div>
+    <div class="cat-tools reveal">
+      <div class="search-box"><input type="search" id="searchInput" placeholder="Cari tema… misalnya: Jawa, Floral, Luxury"></div>
+      <div class="chips" id="chips">
+        <button class="chip active" data-cat="semua">Semua</button>
+        <button class="chip" data-cat="adat">Adat</button>
+        <button class="chip" data-cat="modern">Modern</button>
+        <button class="chip" data-cat="klasik">Klasik</button>
+        <button class="chip" data-cat="floral">Floral</button>
+        <button class="chip" data-cat="rustic">Rustic</button>
+      </div>
+    </div>
+    <div class="grid" id="catalogGrid"></div>
+    <div class="empty-msg" id="emptyMsg">Tidak ada tema yang cocok dengan pencarianmu. Coba kata kunci lain.</div>
+  </div>
+</section>
+
+<section id="cara">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="tag">Cara Pesan</div>
+      <h2>Semudah Tiga Langkah</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3>Pilih Layanan &amp; Tema</h3><p>Tentukan undangan digital atau cetak, lalu pilih tema atau model dari katalog di atas.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>Isi Formulir Pesanan</h3><p>Pakai pembangun pesanan interaktif di bawah — pesan WhatsApp-mu tersusun otomatis.</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>Kirim &amp; Kami Kerjakan</h3><p>Kirim pesan ke WhatsApp kami. Untuk digital, data &amp; fotomu kami bantu isi sampai siap sebar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pesan" style="padding-top:10px">
+  <div class="wrap">
+    <div class="builder reveal">
+      <h2>Pembangun Pesanan</h2>
+      <p class="sub">Isi form di kiri, lihat pesanmu tersusun langsung di kanan, lalu kirim ke WhatsApp kami. Tanpa daftar, tanpa ribet.</p>
+      <div class="b-grid">
+        <form class="b-form" id="orderForm" onsubmit="return false">
+          <label>Jenis Undangan</label>
+          <div class="radio-row">
+            <label class="radio-pill"><input type="radio" name="jenis" value="digital" checked><span>Digital — Rp75.000</span></label>
+            <label class="radio-pill"><input type="radio" name="jenis" value="cetak"><span>Cetak</span></label>
+          </div>
+          <label for="fTema" id="temaLabel">Pilih Tema</label>
+          <select id="fTema"></select>
+          <label for="fNama">Nama Kamu</label>
+          <input id="fNama" type="text" placeholder="misalnya: Sari">
+          <div id="fieldPasangan">
+            <label for="fPasangan">Nama Pasangan (Pengantin)</label>
+            <input id="fPasangan" type="text" placeholder="misalnya: Sari &amp; Bima">
+            <label for="fTanggal">Tanggal Acara</label>
+            <input id="fTanggal" type="date">
+          </div>
+          <div id="fieldJumlah" style="display:none">
+            <label for="fJumlah">Jumlah Cetak (lembar)</label>
+            <input id="fJumlah" type="number" min="1" placeholder="misalnya: 500">
+          </div>
+          <label for="fCatatan">Catatan Tambahan</label>
+          <textarea id="fCatatan" rows="3" placeholder="
