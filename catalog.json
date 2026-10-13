@@ -6,7 +6,103 @@
       "cat": "adat",
       "couple": "Yogi & Gea",
       "img": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
-      "url": "undangan-ngunduh-mantu-yogi-gea (2).html"
+      "url": "ngunduh-mantu-yogi-gea/"
+    },
+    {
+      "slug": "adat-jawa",
+      "name": "Adat Jawa",
+      "cat": "adat",
+      "couple": "Bagas & Laras",
+      "img": "thumbs/thumb-adat-jawa.jpg",
+      "url": "Undangan-Adat-Jawa/"
+    },
+    {
+      "slug": "adat-melayu",
+      "name": "Adat Melayu",
+      "cat": "adat",
+      "couple": "Aisyah & Farhan",
+      "img": "thumbs/thumb-adat-melayu.jpg",
+      "url": "Undangan-Adat-Melayu/"
+    },
+    {
+      "slug": "adat-minang",
+      "name": "Adat Minang",
+      "cat": "adat",
+      "couple": "Rani & Fajar",
+      "img": "thumbs/thumb-adat-minang.jpg",
+      "url": "Undangan-Adat-Minang/"
+    },
+    {
+      "slug": "adat-sunda",
+      "name": "Adat Sunda",
+      "cat": "adat",
+      "couple": "Galih & Intan",
+      "img": "thumbs/thumb-adat-sunda.jpg",
+      "url": "Undangan-Adat-Sunda/"
+    },
+    {
+      "slug": "adat-bali",
+      "name": "Adat Bali",
+      "cat": "adat",
+      "couple": "Gusti & Ayu",
+      "img": "thumbs/thumb-adat-bali.jpg",
+      "url": "Undangan-Adat-Bali/"
+    },
+    {
+      "slug": "adat-batak",
+      "name": "Adat Batak",
+      "cat": "adat",
+      "couple": "Daniel & Rina",
+      "img": "thumbs/thumb-adat-batak.jpg",
+      "url": "Undangan-Adat-Batak/"
+    },
+    {
+      "slug": "floral-blush",
+      "name": "Floral Blush",
+      "cat": "floral",
+      "couple": "Nadia & Rizky",
+      "img": "thumbs/thumb-floral-blush.jpg",
+      "url": "undangan-floral-blush/"
+    },
+    {
+      "slug": "klasik-luxury",
+      "name": "Klasik Luxury",
+      "cat": "klasik",
+      "couple": "Radhitya & Salsabila",
+      "img": "thumbs/thumb-klasik-luxury.jpg",
+      "url": "undangan-klasik-luxury/"
+    },
+    {
+      "slug": "modern-minimalis",
+      "name": "Modern Minimalis",
+      "cat": "modern",
+      "couple": "Alya & Dimas",
+      "img": "thumbs/thumb-modern-minimalis.jpg",
+      "url": "undangan-modern-minimalis/"
+    },
+    {
+      "slug": "rustic-garden",
+      "name": "Rustic Garden",
+      "cat": "rustic",
+      "couple": "Nadia & Raka",
+      "img": "thumbs/thumb-rustic-garden.jpg",
+      "url": "undangan-rustic-garden/"
+    },
+    {
+      "slug": "orchid-botanical",
+      "name": "Orchid Botanical",
+      "cat": "floral",
+      "couple": "Kirana & Damar",
+      "img": "thumbs/thumb-orchid-botanical.webp",
+      "url": "undangan-orchid-botanical/"
+    },
+    {
+      "slug": "khitanan",
+      "name": "Tasyakuran Khitanan",
+      "cat": "khitanan",
+      "couple": "Azzam",
+      "img": "thumbs/thumb-khitanan.jpg",
+      "url": "undangan-khitanan/"
     }
   ],
   "cetakModels": [
