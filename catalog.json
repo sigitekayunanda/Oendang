@@ -103,6 +103,14 @@
       "couple": "Azzam",
       "img": "thumbs/thumb-khitanan.jpg",
       "url": "undangan-khitanan/"
+    },
+    {
+      "slug": "board-game",
+      "name": "Board Game Cinta",
+      "cat": "fun",
+      "couple": "Faris & Maya",
+      "img": "thumbs/thumb-board-game.jpg",
+      "url": "undangan-board-game/"
     }
   ],
   "cetakModels": [

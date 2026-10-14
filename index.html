@@ -318,6 +318,7 @@ footer a:hover{color:#fff}
         <button class="chip active" data-cat="semua">Semua</button>
         <button class="chip" data-cat="adat">Undangan Adat</button>
         <button class="chip" data-cat="tematik">Undangan Tematik</button>
+        <button class="chip" data-cat="fun">Fun &amp; Games</button>
         <button class="chip" data-cat="khitanan">Khitanan</button>
       </div>
     </div>
@@ -510,8 +511,8 @@ tulis bila ada permintaan khusus"></textarea>
   var DATA = {themes: [], cetakModels: []};
   var curCat = 'semua', query = '';
   var grid = $('catalogGrid'), emptyMsg = $('emptyMsg');
-  var CATLABEL = {adat: 'Undangan Adat', tematik: 'Undangan Tematik', khitanan: 'Khitanan'};
-  var CATORDER = {adat: 0, tematik: 1, khitanan: 2};
+  var CATLABEL = {adat: 'Undangan Adat', tematik: 'Undangan Tematik', fun: 'Fun & Games', khitanan: 'Khitanan'};
+  var CATORDER = {adat: 0, tematik: 1, fun: 2, khitanan: 3};
 
   function renderModels(){
     var mg = $('modelGrid'); if(!mg) return;
