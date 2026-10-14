@@ -316,11 +316,9 @@ footer a:hover{color:#fff}
       <div class="search-box"><input type="search" id="searchInput" placeholder="Cari tema… misalnya: Jawa, Floral, Luxury"></div>
       <div class="chips" id="chips">
         <button class="chip active" data-cat="semua">Semua</button>
-        <button class="chip" data-cat="adat">Adat</button>
-        <button class="chip" data-cat="modern">Modern</button>
-        <button class="chip" data-cat="klasik">Klasik</button>
-        <button class="chip" data-cat="floral">Floral</button>
-        <button class="chip" data-cat="rustic">Rustic</button>
+        <button class="chip" data-cat="adat">Undangan Adat</button>
+        <button class="chip" data-cat="tematik">Undangan Tematik</button>
+        <button class="chip" data-cat="khitanan">Khitanan</button>
       </div>
     </div>
     <div class="grid" id="catalogGrid"></div>
@@ -512,7 +510,8 @@ tulis bila ada permintaan khusus"></textarea>
   var DATA = {themes: [], cetakModels: []};
   var curCat = 'semua', query = '';
   var grid = $('catalogGrid'), emptyMsg = $('emptyMsg');
-  var CATLABEL = {adat: 'Adat', modern: 'Modern', klasik: 'Klasik', floral: 'Floral', rustic: 'Rustic', khitanan: 'Khitanan'};
+  var CATLABEL = {adat: 'Undangan Adat', tematik: 'Undangan Tematik', khitanan: 'Khitanan'};
+  var CATORDER = {adat: 0, tematik: 1, khitanan: 2};
 
   function renderModels(){
     var mg = $('modelGrid'); if(!mg) return;
@@ -535,8 +534,12 @@ tulis bila ada permintaan khusus"></textarea>
     var q = query.trim().toLowerCase();
     var list = DATA.themes.filter(function(t){
       var okCat = (curCat === 'semua' || t.cat === curCat);
-      var okQ = !q || (t.name + ' ' + t.couple + ' ' + t.cat).toLowerCase().indexOf(q) >= 0;
+      var okQ = !q || (t.name + ' ' + t.couple + ' ' + t.cat + ' ' + (CATLABEL[t.cat] || '')).toLowerCase().indexOf(q) >= 0;
       return okCat && okQ;
+    }).slice().sort(function(a, b){
+      var ca = (CATORDER[a.cat] != null ? CATORDER[a.cat] : 99), cb = (CATORDER[b.cat] != null ? CATORDER[b.cat] : 99);
+      if(ca !== cb) return ca - cb;
+      return a.name.localeCompare(b.name, 'id');
     });
     grid.innerHTML = list.map(themeCard).join('');
     emptyMsg.style.display = list.length ? 'none' : 'block';
