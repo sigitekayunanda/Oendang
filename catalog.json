@@ -111,6 +111,14 @@
       "couple": "Faris & Maya",
       "img": "thumbs/thumb-board-game.jpg",
       "url": "undangan-board-game/"
+    },
+    {
+      "slug": "petualangan-8bit",
+      "name": "Petualangan 8-Bit",
+      "cat": "fun",
+      "couple": "Dimas & Rina",
+      "img": "thumbs/thumb-petualangan-8bit.jpg",
+      "url": "undangan-petualangan-8bit/"
     }
   ],
   "cetakModels": [

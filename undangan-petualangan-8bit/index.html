@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dimas &amp; Rina – Undangan Petualangan (Prototipe)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+<style>
+:root{--sky1:#5fb8ff;--sky2:#cdeeff;--card:#fff8e1;--ink:#2a2140;--line:#2a2140;--gold:#ffc83d;--red:#e8452c;--green:#2fa84f;--out:#1e2a4a;--on-gold:#2a2140;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky1:#17244f;--sky2:#2d3f80;--card:#2a2548;--ink:#f4efff;--line:#0b0818;--out:#0b0f22}}
+:root[data-theme="dark"]{--sky1:#17244f;--sky2:#2d3f80;--card:#2a2548;--ink:#f4efff;--line:#0b0818;--out:#0b0f22}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--out);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink)}
+.frame{max-width:480px;min-height:100%;margin:0 auto;background:linear-gradient(var(--sky1),var(--sky2));padding-bottom:84px;position:relative;box-shadow:0 0 0 4px var(--line)}
+.px{font-family:"Press Start 2P","Courier New",monospace;line-height:1.5}
+.scene{display:none;min-height:calc(100vh - 100px);padding:24px 16px;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center}
+.scene.on{display:flex}
+h1,h2{margin:0;color:#fff;text-shadow:3px 3px 0 var(--line);font-weight:400}
+h1{font-size:clamp(20px,7vw,30px)}h2{font-size:15px}
+.lvl{font-size:11px;color:var(--ink);background:var(--gold);color:var(--on-gold);padding:6px 10px;border:3px solid var(--line)}
+p{margin:0}
+.say{background:var(--card);color:var(--ink);border:3px solid var(--line);padding:12px 14px;width:100%;font-size:16px;min-height:76px;display:flex;align-items:center;justify-content:center}
+.btn{font-family:"Press Start 2P","Courier New",monospace;font-size:12px;background:var(--gold);color:var(--on-gold);border:3px solid var(--line);box-shadow:0 4px 0 var(--line);padding:14px 16px;min-height:48px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--line)}
+.btn.red{background:var(--red);color:#fff}.btn.green{background:var(--green);color:#fff}
+.lnk{background:none;border:0;color:var(--ink);text-decoration:underline;font:inherit;cursor:pointer;padding:12px;min-height:44px}
+.btn:focus-visible,.lnk:focus-visible,.tap:focus-visible,.nav button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px var(--line)}
+.row{display:flex;gap:10px;justify-content:center;align-items:flex-end;flex-wrap:wrap}
+.sp svg{width:84px;height:auto;display:block}
+.boss svg{width:170px}
+.tap{background:none;border:0;padding:6px;cursor:pointer;min-width:48px;min-height:48px}
+.tap svg{width:76px;height:auto;display:block}
+.dead{visibility:hidden;pointer-events:none}
+.card{background:var(--card);color:var(--ink);border:3px solid var(--line);padding:14px;width:100%;text-align:left;display:grid;gap:8px}
+.card b{display:block}
+.hide{display:none!important}
+.pipe{width:88px;height:96px;background:var(--green);border:3px solid var(--line);position:relative;cursor:pointer;padding:0;display:block}
+.pipe::before{content:"";position:absolute;left:-10px;right:-10px;top:0;height:30px;background:var(--green);border:3px solid var(--line)}
+.coin{width:56px;height:56px;border-radius:50%;background:var(--gold);border:3px solid var(--line);font:12px "Press Start 2P",monospace;color:var(--on-gold);cursor:pointer;padding:0}
+.coin.got{visibility:hidden}
+.qb{width:72px;height:72px;background:var(--gold);border:4px solid var(--line);font:20px "Press Start 2P",monospace;color:var(--on-gold);cursor:pointer;padding:0}
+.qb.open{background:#b98a4b;color:transparent;pointer-events:none}
+.hp{width:100%;max-width:260px;height:20px;border:3px solid var(--line);background:var(--card)}
+.hp i{display:block;height:100%;background:var(--red);transition:width .2s}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%}
+.cd div{background:var(--card);color:var(--ink);border:3px solid var(--line);padding:10px 4px;text-align:center}
+.cd b{display:block;font:16px "Press Start 2P",monospace}.cd span{font-size:13px}
+label{display:block;font-weight:600;margin-bottom:4px}
+input,select,textarea{width:100%;font:16px system-ui,sans-serif;padding:10px;border:3px solid var(--line);background:#fff;color:#2a2140}
+.opts{display:grid;gap:8px}
+.opts label{display:flex;gap:10px;align-items:center;border:3px solid var(--line);padding:10px;margin:0;background:var(--card);min-height:48px}
+.opts input{width:22px;height:22px;flex:none}
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:6px;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));background:var(--line);z-index:5}
+.nav button{font:11px "Press Start 2P","Courier New",monospace;flex:1;max-width:110px;min-height:44px;background:var(--card);color:var(--ink);border:2px solid var(--ink);cursor:pointer}
+#det{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9;display:none;align-items:center;justify-content:center;padding:16px}
+#det.on{display:flex}
+#det .card{max-width:440px;max-height:85vh;overflow:auto}
+.heart{color:var(--red);font-size:28px}
+.qz{width:100%;display:grid;gap:10px}
+.qz .q{background:var(--card);color:var(--ink);border:3px solid var(--line);padding:12px;font-weight:600;text-align:left}
+.opt{font:16px system-ui,sans-serif;text-align:left;background:var(--card);color:var(--ink);border:3px solid var(--line);box-shadow:0 3px 0 var(--line);padding:12px;min-height:48px;cursor:pointer}
+.opt.ok{background:var(--green);color:#fff}.opt.bad{background:var(--red);color:#fff}.opt.hint{outline:3px dashed var(--gold);outline-offset:2px}
+.items{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%}
+.it{font-size:32px;background:var(--card);border:3px solid var(--line);min-height:64px;cursor:pointer;padding:0}
+.it.ok{background:var(--green)}.it.bad{background:var(--red);opacity:.6}
+.fb{font-weight:600;color:var(--ink);background:var(--card);border:3px solid var(--line);padding:8px 10px;width:100%;text-align:left}
+.opt:focus-visible,.it:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px var(--line)}
+@media (prefers-reduced-motion:no-preference){
+.bob{animation:bob 1.2s steps(2) infinite}
+.shake{animation:sh .25s}
+@keyframes bob{50%{transform:translateY(-6px)}}
+@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}}
+@media (min-width:900px){body{background:repeating-linear-gradient(45deg,var(--out),var(--out) 18px,var(--line) 18px,var(--line) 36px)}.frame{margin-top:12px;margin-bottom:12px;min-height:calc(100% - 24px)}.nav{left:50%;right:auto;width:480px;transform:translateX(-50%)}}
+</style>
+</head>
+<body>
+<div class="frame">
+
+<section class="scene on" id="cover">
+  <div class="row bob"><div class="sp" data-spr="G"></div><div class="sp" data-spr="B"></div></div>
+  <h1 class="px">Dimas<br>&amp;<br>Rina</h1>
+  <p class="px" style="font-size:11px;color:#fff;text-shadow:2px 2px 0 var(--line)">Petualangan menuju hari bahagia</p>
+  <div class="say px" style="font-size:11px;min-height:0">Pemain 1:&nbsp;<span id="guest"></span></div>
+  <button class="btn red" data-go="prolog">Mulai petualangan</button>
+  <button class="lnk" data-go="final">Lewati, langsung ke undangan</button>
+  <p class="px" style="font-size:9px;color:#fff;text-shadow:2px 2px 0 var(--line)">🔊 Musik 8-bit &amp; efek suara mulai saat tombol ditekan</p>
+</section>
+
+<section class="scene" id="prolog">
+  <span class="lvl px">Prolog</span>
+  <div class="row bob" id="pscene"></div>
+  <div class="say" id="ptext"></div>
+  <button class="btn" id="pnext">Lanjut</button>
+</section>
+
+<section class="scene" id="l1">
+  <span class="lvl px">Level 1 · Hutan pipa</span>
+  <div class="qz" id="q1"></div>
+  <div class="card hide" id="c1">
+    <b class="px" style="font-size:12px">Tanggal &amp; waktu terbuka!</b>
+    <span>Minggu, 20 Desember 2026</span><span>Akad 09.00 WIB · Resepsi 11.00–14.00 WIB</span>
+    <a class="btn green" id="cal" target="_blank" rel="noopener">Simpan ke kalender</a>
+  </div>
+  <button class="btn hide" id="n1" data-go="l2">Level berikutnya</button>
+</section>
+
+<section class="scene" id="l2">
+  <span class="lvl px">Level 2 · Gua koin</span>
+  <p class="say" style="min-height:0">Monster menyembunyikan cincin di antara barang-barang ini. Ketuk cincin yang benar!</p>
+  <div class="items" id="items"></div>
+  <div class="fb hide" id="fb2" aria-live="polite"></div>
+  <div class="card hide" id="c2">
+    <b class="px" style="font-size:12px">Lokasi terbuka!</b>
+    <span><b>Gedung Serbaguna Melati</b>Jl. Contoh No. 12, Kota Contoh</span>
+    <span>Parkir tersedia di halaman belakang gedung.</span>
+    <a class="btn green" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gedung+Serbaguna+Melati">Buka Google Maps</a>
+  </div>
+  <button class="btn hide" id="n2" data-go="l3">Level berikutnya</button>
+</section>
+
+<section class="scene" id="l3">
+  <span class="lvl px">Level 3 · Jembatan cerita</span>
+  <p class="say" style="min-height:0">Urutkan kisah mereka: ketuk dari kejadian yang paling awal.</p>
+  <div class="qz" id="seq"></div>
+  <div class="card hide" id="story"></div>
+  <button class="btn hide" id="n3" data-go="l4">Menuju kastil</button>
+</section>
+
+<section class="scene" id="l4">
+  <span class="lvl px">Level 4 · Kastil monster</span>
+  <p class="say" id="bq" style="min-height:0">Jawab 3 pertanyaan. Setiap jawaban benar melukai bos!</p>
+  <div class="sp boss bob" id="boss"></div>
+  <div class="hp" aria-hidden="true"><i id="hp" style="width:100%"></i></div>
+  <div class="qz" id="q4"></div>
+  <button class="btn red hide" id="n4" data-go="final">Selamatkan Rina</button>
+</section>
+
+<section class="scene" id="final" style="justify-content:flex-start">
+  <div class="row bob"><div class="sp" data-spr="G"></div><span class="heart px">♥</span><div class="sp" data-spr="B"></div></div>
+  <h2 class="px">Rina selamat!<br>Pernikahan segera digelar</h2>
+  <p class="say" style="min-height:0">Terima kasih, <b id="g2" style="margin-left:4px"></b>, sudah membantu Dimas.</p>
+  <div class="cd" id="cd" aria-live="off"></div>
+  <div class="card" id="rd"></div>
+  <div class="card" id="rsvp">
+    <b class="px" style="font-size:12px">Ikut pesta?</b>
+    <div><label for="nm">Nama</label><input id="nm" maxlength="40"></div>
+    <div class="opts" role="radiogroup" aria-label="Kehadiran">
+      <label><input type="radio" name="att" value="Hadir" checked>Hadir</label>
+      <label><input type="radio" name="att" value="Masih ragu">Masih ragu</label>
+      <label><input type="radio" name="att" value="Tidak hadir">Tidak hadir</label>
+    </div>
+    <div><label for="nt">Jumlah tamu</label><select id="nt"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+    <div><label for="ms">Ucapan &amp; doa</label><textarea id="ms" rows="3" maxlength="200"></textarea></div>
+    <button class="btn red" id="send">Kirim konfirmasi</button>
+    <div class="hide" id="thx">
+      <b>Konfirmasi tercatat. Terima kasih!</b>
+      <p style="margin:6px 0 10px">Ini prototipe: data hanya tersimpan di perangkat ini. Kamu juga bisa mengirimnya lewat WhatsApp.</p>
+      <a class="btn green" id="wa" target="_blank" rel="noopener">Kirim via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div id="det"><div class="card" role="dialog" aria-modal="true" aria-label="Detail acara"><b class="px" style="font-size:12px">Detail acara</b><div id="dd"></div><button class="btn" id="dx">Tutup</button></div></div>
+
+<nav class="nav" aria-label="Menu">
+  <button id="mDet">Detail</button><button id="mRsvp">RSVP</button><button id="mSkip">Lewati</button><button id="mSnd" aria-pressed="false">Suara: mati</button>
+</nav>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var guest='Tamu Istimewa';
+try{var t=new URLSearchParams(location.search).get('to');if(t&&t.trim())guest=t.trim().slice(0,40)}catch(e){}
+$('#guest').textContent=guest;$('#g2').textContent=guest;$('#nm').value=guest==='Tamu Istimewa'?'':guest;
+
+var PAL={k:'#2a1d18',s:'#f2c9a0',w:'#ffffff',b:'#2b3a67',r:'#e8452c',h:'#6b3f2a',p:'#8a4fd0',d:'#3b2a5a',y:'#ffc83d',m:'#f4a6c0'};
+var G=["...kkkk...","..kkkkkk..","..ssssss..","..skssks..","..ssssss..","...ssss...","..bwrrwb..",".bbbwwbbb.","sbbbbbbbbs","sbbbbbbbbs","..bbbbbb..","..bb..bb..","..bb..bb..",".kkk..kkk."];
+var B=["..wwwwww..",".whhhhhhw.",".whssssshw",".whskssksh",".whssssssh","..wwssww..","...wmmw...","..wwmmww..",".wwwwwwww.","wwwwwwwwww","wwwwwwwwww","wwwwwwwwww",".wwwwwwww.","..ss..ss.."];
+var M=["...pppp...","..pppppp..",".pppppppp.",".pwkppwkp.",".pppppppp.",".pppwwppp.",".pppppppp.","..pppppp..","..dd..dd..",".dddd.dddd"];
+var X=["..y.yy.y..",".yyyyyyyy."].concat(M);
+var S={G:G,B:B,M:M,X:X};
+function spr(rows){var r='';rows.forEach(function(row,y){for(var x=0;x<row.length;x++){var c=row[x];if(c!=='.')r+='<rect x="'+x+'" y="'+y+'" width="1.03" height="1.03" fill="'+PAL[c]+'"/>'}});return '<svg viewBox="0 0 '+rows[0].length+' '+rows.length+'" shape-rendering="crispEdges" aria-hidden="true">'+r+'</svg>'}
+function fill(root){$$((root||'')+' [data-spr]').forEach(function(e){e.innerHTML=spr(S[e.getAttribute('data-spr')])})}
+
+/* ===== Audio 8-bit: musik chiptune loop + SFX (WebAudio, tanpa file luar) ===== */
+var sound=false,userMuted=false,ac,master,musicGain,sfxGain,noiseBuf;
+var musicTimer=null,musicStep=0,musicNext=0;
+var STEP=60/132/2; /* 132 BPM, nada 1/8 */
+function mf(m){return 440*Math.pow(2,(m-69)/12)}
+function ensureAudio(){if(ac){if(ac.state==='suspended')ac.resume();return true}
+try{ac=new(window.AudioContext||window.webkitAudioContext)();
+master=ac.createGain();master.gain.value=.9;master.connect(ac.destination);
+musicGain=ac.createGain();musicGain.gain.value=.55;musicGain.connect(master);
+sfxGain=ac.createGain();sfxGain.gain.value=.9;sfxGain.connect(master);
+noiseBuf=ac.createBuffer(1,ac.sampleRate*.05,ac.sampleRate);
+var d=noiseBuf.getChannelData(0);for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+return true}catch(e){return false}}
+function tone(dest,f,t0,dur,type,vol,slide){if(!f)return;var o=ac.createOscillator(),g=ac.createGain();
+o.type=type||'square';o.frequency.setValueAtTime(f,t0);
+if(slide)o.frequency.exponentialRampToValueAtTime(Math.max(30,slide),t0+dur);
+g.gain.setValueAtTime(vol||.05,t0);g.gain.exponentialRampToValueAtTime(.001,t0+dur);
+o.connect(g);g.connect(dest||sfxGain);o.start(t0);o.stop(t0+dur+.03)}
+function hat(t0){var s=ac.createBufferSource(),g=ac.createGain();s.buffer=noiseBuf;
+g.gain.setValueAtTime(.014,t0);g.gain.exponentialRampToValueAtTime(.001,t0+.04);
+s.connect(g);g.connect(musicGain);s.start(t0);s.stop(t0+.05)}
+/* Melodi orisinal ceria 32 langkah + bass segitiga pola akor C-G-Am-F */
+var MEL=[72,76,79,76,81,79,76,72,74,76,79,81,79,76,74,71,72,76,79,76,81,79,84,81,79,76,74,71,72,0,74,0];
+var BAS=[48,55,45,52,41,48,43,50,48,55,45,52,41,48,55,55];
+function schedStep(st,t0){var m=MEL[st%32];if(m)tone(musicGain,mf(m),t0,STEP*.92,'square',.030);
+if(st%2===0)tone(musicGain,mf(BAS[(st>>1)%16]),t0,STEP*1.8,'triangle',.065);
+if(st%2===1)hat(t0);if(st%8===0)tone(musicGain,mf(36),t0,.09,'sine',.10)}
+function startMusic(){if(musicTimer||!ensureAudio())return;musicStep=0;musicNext=ac.currentTime+.06;
+musicTimer=setInterval(function(){if(!sound)return;
+if(musicNext<ac.currentTime-.05)musicNext=ac.currentTime+.05;
+while(musicNext<ac.currentTime+.25){schedStep(musicStep,musicNext);musicNext+=STEP;musicStep=(musicStep+1)%32}},90)}
+function stopMusic(){if(musicTimer){clearInterval(musicTimer);musicTimer=null}}
+function setSound(on){sound=on;var b=$('#mSnd');if(b){b.textContent='Suara: '+(on?'nyala':'mati');b.setAttribute('aria-pressed',on)}
+if(on){ensureAudio();startMusic()}else stopMusic()}
+function sfx(name){if(!sound||!ensureAudio())return;var t=ac.currentTime+.01,i;
+if(name==='success'){[523,659,784,1047].forEach(function(f,i){tone(sfxGain,f,t+i*.07,.10,'square',.05)})}
+else if(name==='fanfare'){[523,659,784,1047,784,1047,1319].forEach(function(f,i){tone(sfxGain,f,t+i*.09,.14,'square',.05)})}
+else if(name==='coin'){tone(sfxGain,988,t,.08,'square',.05);tone(sfxGain,1319,t+.08,.24,'square',.05)}
+else if(name==='error'){tone(sfxGain,180,t,.18,'square',.05,110)}
+else if(name==='jump'){tone(sfxGain,300,t,.16,'square',.05,900)}
+else if(name==='warp'){[440,660,880].forEach(function(f,i){tone(sfxGain,f,t+i*.05,.09,'square',.045)})}
+else if(name==='dialog'){tone(sfxGain,520,t,.07,'square',.045);tone(sfxGain,660,t+.07,.07,'square',.045)}
+else{tone(sfxGain,740,t,.06,'square',.045,990)} /* click */
+}
+function beep(f,d){if(!sound||!ensureAudio())return;tone(sfxGain,f||660,ac.currentTime+.01,d||.08,'square',.045)}
+/* Klik tombol apa pun: suara otomatis nyala (kecuali pernah dimatikan manual) + bunyi klik */
+var lastClk=0;
+document.addEventListener('click',function(e){var el=e.target.closest('button,a,.tap,input[type="radio"]');
+if(!el||el.disabled||el.id==='mSnd')return;
+if(!sound){if(userMuted)return;setSound(true)}else ensureAudio();
+var now=Date.now();if(now-lastClk<60)return;lastClk=now; /* label+radio bisa memicu klik ganda */
+sfx('click')},true);
+document.addEventListener('visibilitychange',function(){if(!ac)return;
+if(document.hidden)ac.suspend();else if(sound)ac.resume()});
+
+function go(id){$$('.scene').forEach(function(s){s.classList.toggle('on',s.id===id)});window.scrollTo(0,0);sfx('warp')}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-go]');if(b)go(b.getAttribute('data-go'))});
+
+/* Prolog */
+var P=[['G B','Di pagi yang cerah, Dimas dan Rina bersiap menuju hari bahagia mereka.'],['M B','Tiba-tiba Monster Jomblo muncul dan membawa Rina pergi!'],['G','“Tolong aku, '+guest+'! Ayo selamatkan Rina!”']];
+var pi=0;
+function showP(){$('#pscene').innerHTML=P[pi][0].split(' ').map(function(k){return '<div class="sp" data-spr="'+k+'"></div>'}).join('');fill('#pscene');$('#ptext').textContent=P[pi][1];$('#pnext').textContent=pi<2?'Lanjut':'Siap, ayo!'}
+$('#pnext').onclick=function(){sfx('dialog');if(pi<2){pi++;showP()}else go('l1')};
+showP();
+
+/* Utilitas kuis */
+function shuf(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+/* q.o[0] = jawaban benar; urutan diacak. Salah 2x → petunjuk; tidak ada yang bisa kalah. */
+function quiz(el,q,done){el.innerHTML='';var wrong=0,btns=[];var h=document.createElement('div');h.className='q';h.textContent=q.t;el.appendChild(h);
+var fb=document.createElement('div');fb.className='fb hide';fb.setAttribute('aria-live','polite');
+shuf(q.o.map(function(t,i){return{t:t,c:i===0}})).forEach(function(o){var b=document.createElement('button');b.className='opt';b.textContent=o.t;btns.push([b,o.c]);
+b.onclick=function(){if(b.disabled)return;if(o.c){b.classList.add('ok');btns.forEach(function(x){x[0].disabled=true});fb.textContent='Benar!';fb.classList.remove('hide');sfx('success');setTimeout(done,800)}
+else{b.classList.add('bad');b.disabled=true;wrong++;sfx('error');fb.textContent=wrong>=2?'Petunjuk: lihat pilihan bergaris putus-putus emas.':'Belum tepat, coba lagi!';fb.classList.remove('hide');if(wrong>=2)btns.forEach(function(x){if(x[1])x[0].classList.add('hint')})}};el.appendChild(b)});
+el.appendChild(fb)}
+
+/* Level 1: kuis nama lengkap */
+quiz($('#q1'),{t:'Siapa nama lengkap pengantin pria?',o:['Dimas Aditya Pratama','Dimas Adi Pratama','Dimas Aryo Prasetya','Rendi Aditya Pratama']},function(){$('#q1').classList.add('hide');$('#c1').classList.remove('hide');$('#n1').classList.remove('hide')});
+$('#cal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Pernikahan Dimas & Rina')+'&dates=20261220T020000Z/20261220T070000Z&location='+encodeURIComponent('Gedung Serbaguna Melati, Jl. Contoh No. 12, Kota Contoh');
+
+/* Level 2: cari item yang benar di antara item lain */
+var IT=[['💍','Cincin',1],['⌚','Jam'],['🔑','Kunci'],['🎩','Topi'],['👟','Sepatu'],['☂️','Payung'],['🕶️','Kacamata'],['🥄','Sendok']];
+shuf(IT).forEach(function(x){var b=document.createElement('button');b.className='it';b.textContent=x[0];b.setAttribute('aria-label',x[1]);
+b.onclick=function(){var f=$('#fb2');f.classList.remove('hide');if(x[2]){b.classList.add('ok');sfx('coin');f.textContent='Cincin ditemukan! Lokasi terbuka.';$('#items').classList.add('hide');$('#c2').classList.remove('hide');$('#n2').classList.remove('hide')}else{b.classList.add('bad');b.disabled=true;sfx('error');f.textContent=x[1]+'? Bukan itu, cari lagi!'}};$('#items').appendChild(b)});
+
+/* Level 3: puzzle urutan kisah */
+var ST=[['Pertama bertemu','Di sebuah acara kampus, Dimas meminjam catatan, Rina meminjamkan senyum.'],['Mulai berpacaran','Kopi sore dan obrolan panjang berubah jadi rencana-rencana kecil.'],['Lamaran','Dimas bertanya, Rina menjawab “iya”. Sisanya, kamu tahu ceritanya.']];
+var n3=0;
+shuf(ST.map(function(s,i){return{i:i,t:s[0],x:s[1]}})).forEach(function(s){var b=document.createElement('button');b.className='opt';b.textContent=s.t;
+b.onclick=function(){if(s.i===n3){b.classList.add('ok');b.disabled=true;sfx('jump');var p=document.createElement('p');p.textContent=s.x;$('#story').appendChild(p);$('#story').classList.remove('hide');n3++;if(n3===3)$('#n3').classList.remove('hide')}else{b.classList.add('bad');sfx('error');setTimeout(function(){b.classList.remove('bad')},500)}};$('#seq').appendChild(b)});
+
+/* Level 4: bos, 3 pertanyaan (menguji info dari level sebelumnya) */
+$('#boss').innerHTML=spr(X);
+var BQ=[{t:'Tanggal berapa pernikahan Dimas & Rina?',o:['20 Desember 2026','27 Desember 2026','13 Desember 2026','20 November 2026']},{t:'Di gedung apa acaranya?',o:['Gedung Serbaguna Melati','Gedung Serbaguna Mawar','Balai Kota Melati','Aula Kenanga']},{t:'Bunga favorit Rina?',o:['🌷 Tulip','🌹 Mawar','🌻 Bunga matahari','🌸 Sakura']}];
+var bi=0,QT=['Aduh!','Jangan injak aku!','Baiklah, aku menyerah!'];
+function nextQ(){quiz($('#q4'),BQ[bi],function(){bi++;$('#hp').style.width=((3-bi)*33.4)+'%';var el=$('#boss');el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');$('#bq').textContent=QT[bi-1];
+if(bi<3){setTimeout(nextQ,600)}else{$('#q4').classList.add('hide');el.classList.add('dead');$('#bq').textContent='Bos kalah! Pintu kastil terbuka.';$('#n4').classList.remove('hide')}})}
+nextQ();
+
+/* Final */
+var INFO='<span><b>Tanggal</b>Minggu, 20 Desember 2026</span><span><b>Waktu</b>Akad 09.00 · Resepsi 11.00–14.00 WIB</span><span><b>Lokasi</b>Gedung Serbaguna Melati, Jl. Contoh No. 12, Kota Contoh</span><span><b>Rundown</b>09.00 Akad · 11.00 Resepsi · 12.30 Makan siang · 14.00 Selesai</span><span><b>Dress code</b>Nuansa biru &amp; krem</span>';
+$('#rd').innerHTML='<b class="px" style="font-size:12px">Detail acara</b>'+INFO;$('#dd').innerHTML=INFO;
+var target=new Date('2026-12-20T09:00:00+07:00').getTime();
+function tick(){var d=target-Date.now();if(d<=0){$('#cd').innerHTML='<div style="grid-column:1/5"><b>Hari ini!</b></div>';return}
+var v=[Math.floor(d/864e5),Math.floor(d%864e5/36e5),Math.floor(d%36e5/6e4),Math.floor(d%6e4/1e3)],l=['hari','jam','menit','detik'];
+$('#cd').innerHTML=v.map(function(x,k){return '<div><b>'+x+'</b><span>'+l[k]+'</span></div>'}).join('')}
+tick();setInterval(tick,1000);
+
+$('#send').onclick=function(){var nm=$('#nm').value.trim()||guest,at=($('input[name=att]:checked')||{}).value||'Hadir',nt=$('#nt').value,ms=$('#ms').value.trim();
+try{localStorage.setItem('rsvp-dummy',JSON.stringify({nm:nm,at:at,nt:nt,ms:ms}))}catch(e){}
+var txt='Halo Dimas & Rina, saya '+nm+' ('+at+', '+nt+' orang).'+(ms?' '+ms:'');
+$('#wa').href='https://wa.me/6281234567890?text='+encodeURIComponent(txt);
+$('#thx').classList.remove('hide');this.classList.add('hide');sfx('fanfare')};
+
+/* Menu */
+$('#mDet').onclick=function(){$('#det').classList.add('on')};
+$('#dx').onclick=function(){$('#det').classList.remove('on')};
+$('#det').onclick=function(e){if(e.target===this)this.classList.remove('on')};
+$('#mSkip').onclick=function(){go('final')};
+$('#mRsvp').onclick=function(){go('final');setTimeout(function(){$('#rsvp').scrollIntoView({behavior:'smooth',block:'start'})},30)};
+$('#mSnd').onclick=function(){var on=!sound;userMuted=!on;setSound(on);if(on)sfx('coin')};
+document.addEventListener('keydown',function(e){if(e.key==='Escape')$('#det').classList.remove('on')});
+
+fill('');
+})();
+</script>
+</body>
+</html>
