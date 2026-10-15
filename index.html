@@ -112,22 +112,6 @@ section{padding:60px 0}
 .step h3{margin-bottom:6px;color:var(--primary-d);font-size:18px}
 .step p{color:var(--muted);font-size:14px}
 
-/* builder */
-.builder{background:linear-gradient(170deg,#0C4A34,#14684A);border-radius:24px;padding:34px;color:#fff}
-.builder h2{color:#fff;text-align:center;font-size:clamp(24px,3.5vw,32px)}
-.builder .sub{text-align:center;color:#D9E9DD;margin:8px auto 26px;max-width:540px;font-size:15px}
-.b-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.b-form label{display:block;font-size:13px;font-weight:700;letter-spacing:.4px;margin:12px 0 5px;color:var(--gold-soft)}
-.b-form input,.b-form select,.b-form textarea{width:100%;padding:11px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.3);font:inherit;background:rgba(255,255,255,.97);color:var(--ink);font-size:14.5px}
-.radio-row{display:flex;gap:10px}
-.radio-pill{flex:1}
-.radio-pill input{display:none}
-.radio-pill span{display:block;text-align:center;padding:11px;border-radius:10px;border:1.5px solid rgba(255,255,255,.4);cursor:pointer;font-weight:700;font-size:14px}
-.radio-pill input:checked+span{background:var(--gold);color:#241c05;border-color:var(--gold)}
-.b-preview{background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.4);border-radius:14px;padding:18px;display:flex;flex-direction:column}
-.b-preview h3{font-size:15px;margin-bottom:8px;color:var(--gold-soft);font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:1px;text-transform:uppercase}
-#waPreview{white-space:pre-wrap;font-size:14px;color:#F2F6F2;flex:1;line-height:1.5}
-.b-preview .btn{justify-content:center;margin-top:14px}
 
 /* faq */
 .faq{max-width:760px;margin:0 auto}
@@ -169,13 +153,11 @@ footer a:hover{color:#fff}
   .wrap{padding:0 18px}
   section{padding:48px 0}
   .price-card{grid-template-columns:1fr;padding:24px;gap:24px}
-  .b-grid{grid-template-columns:1fr;gap:20px}
   .f-grid{grid-template-columns:1fr;gap:24px}
   .feat{grid-template-columns:1fr;gap:10px}
   .nav-links{position:absolute;top:72px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px;border-bottom:1px solid var(--line);display:none;gap:14px;box-shadow:0 10px 20px rgba(0,0,0,.05)}
   .nav-links.open{display:flex}
   .burger{display:block}
-  .builder{padding:24px 18px}
   .hero-in{padding:48px 0 72px}
   .stats{margin-top:30px}
   .stat{padding:10px 16px;min-width:105px}
@@ -214,13 +196,11 @@ footer a:hover{color:#fff}
 .reveal.on{opacity:1;transform:none}
 @media(max-width:820px){
   .price-card{grid-template-columns:1fr}
-  .b-grid{grid-template-columns:1fr}
   .f-grid{grid-template-columns:1fr}
   .feat{grid-template-columns:1fr}
   .nav-links{position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:18px;border-bottom:1px solid var(--line);display:none;gap:16px}
   .nav-links.open{display:flex}
   .burger{display:block}
-  .builder{padding:26px 20px}
 }
 
 </style>
@@ -236,7 +216,7 @@ footer a:hover{color:#fff}
       <a href="katalog-cetak/">Katalog Cetak</a>
       <a href="#cara">Cara Pesan</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn-wa nav-cta" href="#pesan">Pesan Sekarang</a>
+      <a class="btn btn-wa nav-cta" href="https://wa.me/6282283506764?text=Halo%20Oendang%2C%20saya%20mau%20pesan%20undangan." target="_blank" rel="noopener">Pesan Sekarang</a>
     </nav>
   </div>
 </header>
@@ -248,7 +228,7 @@ footer a:hover{color:#fff}
     <p>Oendang adalah layanan undangan dari Lapak Kreatif: undangan digital interaktif Rp75.000 untuk semua tema, dan undangan cetak berbagai model. Pilih tema, klik, langsung terhubung ke WhatsApp kami.</p>
     <div class="hero-btns">
       <a class="btn btn-gold" href="#katalog">Lihat Katalog Tema</a>
-      <a class="btn btn-light" href="#pesan">Buat Pesanan</a>
+      <a class="btn btn-light" href="https://wa.me/6282283506764?text=Halo%20Oendang%2C%20saya%20mau%20pesan%20undangan." target="_blank" rel="noopener">Pesan via WhatsApp</a>
     </div>
     <div class="stats">
       <div class="stat"><b><span class="count" id="statThemes" data-to="10">0</span></b><span>Tema Katalog</span></div>
@@ -304,7 +284,7 @@ footer a:hover{color:#fff}
           <div style="flex:1;min-width:240px"><b style="color:var(--primary-d);font-size:17px">Katalog Cetak — Kategori 01: Undangan Minimalis</b><br><span style="font-size:14.5px">Ukuran 10 x 20 cm, desain minimalis modern, fitur foto pengantin, denah, turut mengundang, dll. <b>Mulai Rp600/lembar</b> — gratis undangan digital untuk pemesanan min. 1.000 lembar. 15 contoh tema, halaman depan &amp; belakang.</span></div>
           <a class="btn btn-gold" href="katalog-cetak/">Lihat Katalog Cetak</a>
         </div>
-        <div class="note-box">Harga undangan cetak <b>menyesuaikan model &amp; jumlah pesanan</b>. Pilih model di formulir pemesanan di bawah, atau tanya dulu lewat WhatsApp — kami bantu hitungkan.</div>
+        <div class="note-box">Harga undangan cetak <b>menyesuaikan model &amp; jumlah pesanan</b> — kecuali kategori yang sudah berlabel harga. Tanya dulu lewat WhatsApp, kami bantu hitungkan.</div>
       </div>
     </div>
   </div>
@@ -340,51 +320,12 @@ footer a:hover{color:#fff}
     </div>
     <div class="steps">
       <div class="step reveal"><div class="n">1</div><h3>Pilih Layanan &amp; Tema</h3><p>Tentukan undangan digital atau cetak, lalu pilih tema atau model dari katalog di atas.</p></div>
-      <div class="step reveal"><div class="n">2</div><h3>Isi Formulir Pesanan</h3><p>Pakai pembangun pesanan interaktif di bawah — pesan WhatsApp-mu tersusun otomatis.</p></div>
-      <div class="step reveal"><div class="n">3</div><h3>Kirim &amp; Kami Kerjakan</h3><p>Kirim pesan ke WhatsApp kami. Untuk digital, data &amp; fotomu kami bantu isi sampai siap sebar.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>Chat WhatsApp Kami</h3><p>Klik tombol pesan di tema/model pilihanmu — atau tombol WhatsApp di halaman ini — lalu sampaikan kebutuhanmu.</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>Kami Kerjakan</h3><p>Setelah sepakat, pesananmu kami kerjakan. Untuk digital, data &amp; fotomu kami bantu isi sampai siap sebar.</p></div>
     </div>
   </div>
 </section>
 
-<section id="pesan" style="padding-top:10px">
-  <div class="wrap">
-    <div class="builder reveal">
-      <h2>Pembangun Pesanan</h2>
-      <p class="sub">Isi form di kiri, lihat pesanmu tersusun langsung di kanan, lalu kirim ke WhatsApp kami. Tanpa daftar, tanpa ribet.</p>
-      <div class="b-grid">
-        <form class="b-form" id="orderForm" onsubmit="return false">
-          <label>Jenis Undangan</label>
-          <div class="radio-row">
-            <label class="radio-pill"><input type="radio" name="jenis" value="digital" checked><span>Digital — Rp75.000</span></label>
-            <label class="radio-pill"><input type="radio" name="jenis" value="cetak"><span>Cetak</span></label>
-          </div>
-          <label for="fTema" id="temaLabel">Pilih Tema</label>
-          <select id="fTema"></select>
-          <label for="fNama">Nama Kamu</label>
-          <input id="fNama" type="text" placeholder="misalnya: Sari">
-          <div id="fieldPasangan">
-            <label for="fPasangan">Nama Pasangan (Pengantin)</label>
-            <input id="fPasangan" type="text" placeholder="misalnya: Sari &amp; Bima">
-            <label for="fTanggal">Tanggal Acara</label>
-            <input id="fTanggal" type="date">
-          </div>
-          <div id="fieldJumlah" style="display:none">
-            <label for="fJumlah">Jumlah Cetak (lembar)</label>
-            <input id="fJumlah" type="number" min="1" placeholder="misalnya: 500">
-          </div>
-          <label for="fCatatan">Catatan Tambahan</label>
-          <textarea id="fCatatan" rows="3" placeholder="
-tulis bila ada permintaan khusus"></textarea>
-        </form>
-        <div class="b-preview">
-          <h3>Pratinjau Pesan WhatsApp</h3>
-          <div id="waPreview"></div>
-          <a class="btn btn-wa" id="waSend" href="https://wa.me/6282283506764" target="_blank" rel="noopener">Kirim via WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="faq" style="background:var(--bg2)">
   <div class="wrap">
@@ -408,7 +349,7 @@ tulis bila ada permintaan khusus"></textarea>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button">Bagaimana cara memesan?<span class="arr">+</span></button>
-        <div class="faq-a"><p>Pilih tema di katalog, isi Pembangun Pesanan di halaman ini, lalu kirim pesan WhatsApp yang tersusun otomatis. Bisa juga langsung chat ke 0822-8350-6764.</p></div>
+        <div class="faq-a"><p>Pilih tema di katalog, lalu klik tombol Pesan di tema itu — kamu langsung terhubung ke WhatsApp kami di 0822-8350-6764. Sampaikan tema pilihan, nama, dan tanggal acaramu, sisanya kami pandu.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button">Wilayah layanannya di mana saja?<span class="arr">+</span></button>
@@ -431,7 +372,7 @@ tulis bila ada permintaan khusus"></textarea>
         <p><a href="#layanan">Layanan</a></p>
         <p><a href="#katalog">Katalog Tema</a></p>
         <p><a href="#cara">Cara Pesan</a></p>
-        <p><a href="#pesan">Pesan Sekarang</a></p>
+        <p><a href="https://wa.me/6282283506764?text=Halo%20Oendang%2C%20saya%20mau%20pesan%20undangan." target="_blank" rel="noopener">Pesan Sekarang</a></p>
         <p><a href="#faq">FAQ</a></p>
       </div>
       <div>
@@ -453,7 +394,7 @@ tulis bila ada permintaan khusus"></textarea>
       <p id="lbSub"></p>
       <div class="lb-actions">
         <a class="a-view" id="lbView" href="#" target="_blank" rel="noopener">Lihat Contoh</a>
-        <a class="a-order" id="lbOrder" href="#pesan">Pesan Tema Ini</a>
+        <a class="a-order" id="lbOrder" href="#" target="_blank" rel="noopener">Pesan Tema Ini</a>
       </div>
     </div>
   </div>
@@ -532,7 +473,7 @@ tulis bila ada permintaan khusus"></textarea>
         '<div class="couple">Contoh: ' + t.couple + '</div>' +
         '<div class="card-actions">' +
           '<a class="a-view" href="' + t.url + '" target="_blank" rel="noopener">Lihat Contoh</a>' +
-          '<a class="a-order" href="#pesan" data-order="' + t.slug + '">Pesan</a>' +
+          '<a class="a-order" href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Halo Oendang, saya mau pesan undangan digital paket Rp75.000. Tema: ' + t.name + ' (contoh: ' + t.couple + '). Mohon info selanjutnya.') + '" target="_blank" rel="noopener">Pesan</a>' +
         '</div>' +
       '</div></article>';
   }
@@ -569,7 +510,7 @@ tulis bila ada permintaan khusus"></textarea>
     $('lbTitle').textContent = t.name;
     $('lbSub').textContent = 'Contoh: ' + t.couple + ' — kategori ' + (CATLABEL[t.cat] || t.cat) + '. Klik Lihat Contoh untuk mencobanya seperti tamu.';
     $('lbView').href = t.url;
-    $('lbOrder').setAttribute('data-order', t.slug);
+    $('lbOrder').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Halo Oendang, saya mau pesan undangan digital paket Rp75.000. Tema: ' + t.name + ' (contoh: ' + t.couple + '). Mohon info selanjutnya.');
     lb.classList.add('open');
   }
   function closeLb(){ lb.classList.remove('open'); }
@@ -581,78 +522,16 @@ tulis bila ada permintaan khusus"></textarea>
     var img = e.target.closest('img.cover');
     if(img){ var t = findTheme(img.getAttribute('data-slug')); if(t) openLb(t); }
   });
-  document.addEventListener('click', function(e){
-    var a = e.target.closest('[data-order]');
-    if(!a) return;
-    var t = findTheme(a.getAttribute('data-order'));
-    closeLb();
-    if(t) setOrder('digital', t);
-  });
-
-  /* formulir pemesanan */
-  var fTema = $('fTema'), fNama = $('fNama'), fPasangan = $('fPasangan'), fTanggal = $('fTanggal'),
-      fJumlah = $('fJumlah'), fCatatan = $('fCatatan'), waPreview = $('waPreview'), waSend = $('waSend');
-  function jenis(){ var r = document.querySelector('input[name="jenis"]:checked'); return r ? r.value : 'digital'; }
-  function fillTema(selectedName){
-    var j = jenis(), html = '';
-    if(j === 'digital'){
-      $('temaLabel').textContent = 'Pilih Tema';
-      DATA.themes.forEach(function(t){ html += '<option value="' + t.name + '"' + (t.name === selectedName ? ' selected' : '') + '>' + t.name + ' — ' + t.couple + '</option>'; });
-    } else {
-      $('temaLabel').textContent = 'Pilih Model Cetak';
-      DATA.cetakModels.forEach(function(m){ html += '<option value="' + m + '"' + (m === selectedName ? ' selected' : '') + '>' + m + '</option>'; });
-    }
-    fTema.innerHTML = html;
-    $('fieldPasangan').style.display = (j === 'digital') ? '' : 'none';
-    $('fieldJumlah').style.display = (j === 'digital') ? 'none' : '';
-  }
-  function fmtTanggal(v){
-    if(!v) return '';
-    var d = new Date(v + 'T00:00:00');
-    return isNaN(d) ? v : d.toLocaleDateString('id-ID', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'});
-  }
-  function buildMsg(){
-    var j = jenis(), lines = [];
-    if(j === 'digital'){
-      lines.push('Halo Oendang, saya mau pesan undangan digital paket Rp75.000.');
-      if(fTema.value) lines.push('Tema: ' + fTema.value);
-      if(fNama.value.trim()) lines.push('Nama saya: ' + fNama.value.trim());
-      if(fPasangan.value.trim()) lines.push('Nama pasangan (pengantin): ' + fPasangan.value.trim());
-      if(fTanggal.value) lines.push('Tanggal acara: ' + fmtTanggal(fTanggal.value));
-    } else {
-      lines.push('Halo Oendang, saya mau pesan undangan cetak.');
-      if(fTema.value) lines.push('Model: ' + fTema.value);
-      if(fNama.value.trim()) lines.push('Nama saya: ' + fNama.value.trim());
-      if(fJumlah.value) lines.push('Jumlah cetak: ' + fJumlah.value + ' lembar');
-    }
-    if(fCatatan.value.trim()) lines.push('Catatan: ' + fCatatan.value.trim());
-    lines.push('Mohon dibantu langkah selanjutnya ya. Terima kasih!');
-    return lines.join('\n');
-  }
-  function updatePreview(){
-    var msg = buildMsg();
-    waPreview.textContent = msg;
-    waSend.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
-  }
-  function setOrder(j, t){
-    var radio = document.querySelector('input[name="jenis"][value="' + j + '"]');
-    if(radio) radio.checked = true;
-    fillTema(t ? t.name : undefined);
-    updatePreview();
-  }
-  document.querySelectorAll('input[name="jenis"]').forEach(function(r){ r.addEventListener('change', function(){ fillTema(); updatePreview(); }); });
-  [fTema, fNama, fPasangan, fTanggal, fJumlah, fCatatan].forEach(function(el){ on(el, 'input', updatePreview); on(el, 'change', updatePreview); });
 
   /* muat katalog */
   fetch('catalog.json').then(function(r){ return r.json(); }).then(function(data){
     DATA = data || DATA;
-    renderModels(); applyFilter(); fillTema(); updatePreview();
+    renderModels(); applyFilter();
     var st = $('statThemes');
     if(st){ st.setAttribute('data-to', String(DATA.themes.length)); if(counted){ st.textContent = '0'; countUp(st); } }
   }).catch(function(){
     emptyMsg.textContent = 'Katalog sedang tidak dapat dimuat. Silakan tanya tema lewat WhatsApp 0822-8350-6764.';
     emptyMsg.style.display = 'block';
-    fillTema(); updatePreview();
   });
 
   /* faq */
