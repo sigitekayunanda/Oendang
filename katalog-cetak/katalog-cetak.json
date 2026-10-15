@@ -165,19 +165,19 @@
    "url": "undangan-lipat-3/",
    "cover": "undangan-lipat-3/img/01-utama-zamrud-luar.jpg",
    "spec": {
-    "ukuran": "Terbuka 28 x 21 cm — tertutup 14 x 21 cm",
+    "ukuran": "Terbuka 21 x 28 cm — tertutup 21 x 14 cm",
     "desain": "Lipat 3 belah tengah (gate fold), panel 7 / 14 / 7 cm",
     "fitur": [
-     "Cover nama kedua mempelai",
-     "Foto kedua mempelai berdua di cover",
-     "Foto mempelai wanita",
-     "Foto mempelai pria",
+     "3 foto utama (mempelai wanita, mempelai pria, foto berdua)",
+     "Cover nama kedua mempelai + foto berdua",
      "Isi undangan lengkap",
      "Turut mengundang",
      "Denah lokasi",
-     "QR lokasi / Scan lokasi"
+     "QR lokasi / Scan lokasi",
+     "Full custom"
     ],
-    "hargaLabel": "Harga menyesuaikan model & jumlah"
+    "hargaLabel": "Mulai Rp1.800 / lembar",
+    "hargaMulai": 1800
    },
    "themes": [
     {
